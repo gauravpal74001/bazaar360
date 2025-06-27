@@ -1,0 +1,106 @@
+.product-card {
+  width: 18.75rem;
+  height: 25rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    .product-actions {
+      opacity: 1;
+    }
+  }
+
+  .product-image {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .product-info {
+    padding: 0.5rem;
+    @include flex(column, flex-start, flex-start, 0.5rem);
+
+    .product-name {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $color2;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color3;
+    }
+
+    .product-stock {
+      font-size: 0.9rem;
+      color: #666;
+      
+      &.in-stock {
+        color: #2ecc71;
+      }
+      
+      &.low-stock {
+        color: #f39c12;
+      }
+      
+      &.out-of-stock {
+        color: #e74c3c;
+      }
+    }
+  }
+
+  .product-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @include flex(row, center, center, 1rem);
+    
+    button {
+      @include square(3.5rem);
+      border: none;
+      border-radius: 50%;
+      background-color: white;
+      color: $color3;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      @include flex;
+      
+      &:hover {
+        background-color: $color3;
+        color: white;
+        transform: scale(1.1);
+
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+      
+      svg {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+} 

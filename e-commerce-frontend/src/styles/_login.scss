@@ -1,0 +1,73 @@
+.login{
+    @include flex(column);
+    height: 90vh;
+    main{
+        @include flex(column , center, stretch , 2rem );
+        height:90%;
+        width: 100%;
+        max-width :400px;
+        padding: 2rem;
+        @include baseShadow();
+        >h1{
+            @include heading(3px);
+            font-weight: 700;
+            text-align: center;
+        }
+        >div{
+            width : 100%;
+            @include flex(column , flex-start , stretch , .2rem );
+            >input,>select{
+                border-radius: 5px;
+                border: 1px solid rgba(3, 34, 34, 0.2);
+                padding: 1rem;
+                outline: none;
+                font-size: 1.05rem;
+            }
+
+            >p{
+                text-align: center;
+                color: #757575;
+                font-size: 0.95rem;
+                margin: 1rem 0;
+            }
+
+            .google-btn {
+                @include flex;
+                background-color: white;
+                border: 1px solid #dadce0;
+                border-radius: 4px;
+                padding: 0;
+                height: 40px;
+                width: 100%;
+                cursor: pointer;
+                position: relative;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: #f8f9fa;
+                    border-color: #dadce0;
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                }
+
+                &:active {
+                    background-color: #f1f3f4;
+                }
+
+                > svg {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 8px;
+                }
+
+                > span {
+                    color: #3c4043;
+                    font-family: "Google Sans", Roboto, Arial, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    letter-spacing: 0.25px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

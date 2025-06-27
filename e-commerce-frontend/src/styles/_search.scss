@@ -1,0 +1,93 @@
+.searchimage{
+    padding: 2rem;
+    @include flex(row, flex-start , center , 2 rem );
+    height: calc(100vh - 4rem);
+    >aside{
+        min-width: 18rem;
+        width: 15%;
+        box-shadow: 2px 5px 10px rgba(0,0,0,0.5);
+        padding:2rem;
+        height: 100%;
+        @include flex(column, flex-start , stretch , .5rem );
+        >h2{
+           @include heading (2px);
+        }
+        >div{
+            >input,select{
+                @include inputStyle(100% , 1rem , white , 1px solid rgba(154 , 154 , 154 , 0.5));
+                border-radius: 5px;
+                padding: .5rem;
+                margin: .5rem;
+
+            }
+
+        }
+    }
+    >main{
+        min-width: none;
+        width: 100%;
+        padding: 2rem;
+        @include flex(column , flex-start , stretch, 2rem );
+        >h2{
+            @include heading(2px);
+            font-weight: 400;
+            margin-top: -6rem;
+        }
+        >input{
+            @include inputStyle(100% , .5rem , white , 1px solid rgba(154 , 154 , 154 , 0.3));
+            border-radius: 10px;
+            display: block;
+        }
+        .product-card-container{
+            @include flex(row, flex-start , flex-start  , .3rem);
+            flex-wrap: wrap;
+            width: 100%;
+            overflow-y: auto;
+        }
+        >article{
+            @include flex;
+            >button{
+                @include flex(row, center , center , 1rem);
+                @include btn(.5rem 1rem,$color3, white);
+                margin-bottom: -10rem ;
+                border-radius: 10px;
+                &:disabled{
+                    cursor:not-allowed;
+                    opacity: .8;
+                    color: $color2;
+                    
+                }
+            }
+            >span{
+                margin-bottom: -10rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+
+        > button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: rgb(62, 62, 62);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:disabled {
+                background-color: rgb(157, 157, 157);
+                cursor: not-allowed;
+            }
+        }
+
+        > span {
+            font-size: 1.2rem;
+        }
+    }
+}

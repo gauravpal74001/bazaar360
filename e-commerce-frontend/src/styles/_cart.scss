@@ -1,0 +1,108 @@
+.cart{
+     padding: 2rem 4rem ;
+     @include flex(row, unset , unset, 4rem );
+     height: calc(100vh - 4rem);
+     >main{
+        width: 70%;
+        >h1{
+            @include heading(2px);
+            text-align: center;
+        }
+        overflow-y: auto;
+        &::-webkit-scrollbar{
+            display:none;
+        }
+
+
+     }
+
+     >aside{
+        width:30%;
+        padding: 4rem;
+        @include flex(column , center , stretch , 1.2rem );
+        >input{
+            padding: 1rem;
+            border: 1px solid rgba(0,0,0,0.28);
+            border-radius: .5rem;
+            margin-top: 1rem;
+        }
+        >p{
+            font-size:1.2rem ;
+            em{
+                color:red;
+            }
+        }
+        >a{
+            background-color: $color3;
+            padding: 1rem;
+            border-radius: 5px;
+            color:$color1;
+            @include flex;
+            text-transform: none;
+            &:hover{
+               opacity: 0.8;
+            }
+         }
+
+         >span{
+            margin-top: -1rem;
+            > code{
+               font-weight: 700;
+               text-align: flex-end;
+            }
+         }
+
+     }
+
+}
+.cart-items{
+    padding: 3rem;
+    @include flex(row, flex-start , center , 2rem );
+    >img{
+        @include square(10rem );
+        object-fit: contain;
+    }
+    >article{
+        >a{
+            text-decoration: none;
+            @include flex(column , center , flex-start , 2rem );
+        }
+        >span{
+            font-size: medium;
+            font-weight: 700;
+        }
+    }
+    >div{
+        padding: 2rem;
+        @include flex(row, center , center , 1 rem );
+        margin-left: auto;
+        >button{
+            border: none;
+            border-radius: 5px;
+            @include square(2rem);
+            @include flex;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            &:hover{
+                color: $color2;
+                background-color: $color3;
+                opacity: .8;
+            }
+        }
+
+    }
+    >button{
+        border:none;
+        background-color: transparent;
+        padding-left: -1rem ;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 1.2rem;
+        &:hover{
+            color: red;
+        }
+    }
+    
+
+}
